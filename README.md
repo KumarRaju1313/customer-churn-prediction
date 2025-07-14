@@ -1,54 +1,83 @@
-**Data**  
+# 🔄 Customer Churn Prediction
 
-The dataset used in this project is provided in the data directory. It includes customer demographics, account information, and services availed by the customers. Some columns include:  
+This project predicts whether a customer is likely to churn (discontinue service) based on their demographics, account details, and service usage patterns using various machine learning algorithms.
 
-Gender,  
-SeniorCitizen,    
-Partner,   
-Dependents,  
-tenure,  
-PhoneService,  
-MultipleLines,  
-InternetService,  
-OnlineSecurity,  
-OnlineBackup,  
-DeviceProtection,  
-TechSupport,  
-StreamingTV,  
-StreamingMovies,  
-Contract,  
-PaperlessBilling,  
-PaymentMethod,  
-MonthlyCharges,  
-TotalCharges,  
-Churn,  
+---
 
-Missing values in TotalCharges have been handled by replacing them with the median value.  
+## 📁 Dataset
 
-**Methodology**  
-  
-Data Preprocessing:  
+The dataset includes information about telecom customers and whether they have churned. Key columns include:
 
-Handle missing values.  
-Convert categorical variables to numerical using one-hot encoding.  
-Standardize numerical variables.  
+- Gender  
+- SeniorCitizen  
+- Partner  
+- Dependents  
+- Tenure  
+- PhoneService  
+- MultipleLines  
+- InternetService  
+- OnlineSecurity  
+- OnlineBackup  
+- DeviceProtection  
+- TechSupport  
+- StreamingTV  
+- StreamingMovies  
+- Contract  
+- PaperlessBilling  
+- PaymentMethod  
+- MonthlyCharges  
+- TotalCharges  
+- **Churn** (Target)
 
-Model Training:  
+🧹 **Note:** Missing values in the `TotalCharges` column were handled by replacing them with the **median value**.
 
-Train various machine learning models, including KNN, Logistic Regression, SVM, Decision Tree, and Random Forest.  
+---
 
-Model Evaluation:  
-  
-Evaluate the models using accuracy as the metric.  
+## 🧰 Methodology
 
-**Results**  
+### 🔧 Data Preprocessing
+- Handle missing values.
+- Apply one-hot encoding to categorical variables.
+- Standardize numerical columns.
 
-The accuracy of the different models on the test set are as follows:  
+### 🤖 Model Training
+The following classification models were trained:
+- K-Nearest Neighbors (KNN)  
+- Logistic Regression  
+- Support Vector Machine (SVM)  
+- Decision Tree  
+- Random Forest
 
-KNN achieved an accuracy of 74.7%  
-Logistic Regression achieved an accuracy of 79.1%  
-Support Vector Machines achieved an accuracy of 78.4%  
-Decision Trees achieved an accuracy of 71.5%  
-Random Forest achieved an accuracy of 76.3%  
+### 📏 Evaluation Metric
+- **Accuracy** on the test set was used to evaluate performance.
 
-The algorithm with the highest accuracy is "Logistic Regression" with an accuracy of 79.1%. Therefore, for churn prediction based on the provided data and model evaluation, Logistic Regression is the recommended choice.
+---
+
+## 📊 Results
+
+| Model               | Accuracy   |
+|---------------------|------------|
+| KNN                 | 74.7%      |
+| Logistic Regression | **79.1%** ✅ |
+| SVM                 | 78.4%      |
+| Decision Tree       | 71.5%      |
+| Random Forest       | 76.3%      |
+
+---
+
+## 🔍 Conclusion
+
+- **Logistic Regression** achieved the highest accuracy of **79.1%** and is the most suitable model for this churn prediction task.
+- SVM also performed well, while Decision Trees had the lowest accuracy.
+- Proper preprocessing and feature encoding significantly impacted model performance.
+
+---
+
+## ⚙️ Tools & Libraries
+
+- Python  
+- Pandas  
+- NumPy  
+- Matplotlib & Seaborn  
+- Scikit-learn  
+- Jupyter Notebook
